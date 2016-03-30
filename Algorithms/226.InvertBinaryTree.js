@@ -10,9 +10,6 @@
  * @return {TreeNode}
  */
 var invertTree = function(root) {
-    if (!root) {
-        return root;
-    }
     function swap(node) {
         var t=node.left;
         node.left=node.right;
@@ -22,9 +19,10 @@ var invertTree = function(root) {
     while (a.length) {
         var _a = [];
         a.forEach(function(node) {
-            swap(node);
-            node.left && _a.push(node.left);
-            node.right && _a.push(node.right);
+            if (node) {
+                swap(node);
+                _a.push(node.left, node.right);
+            }
         });
         a = _a;
     }
