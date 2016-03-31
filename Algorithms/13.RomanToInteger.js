@@ -11,7 +11,7 @@ var romanToInt = function(s) {
         C: 100,
         D: 500,
         M: 1000,
-    }
+    };
     return s.split('').map(function(str) {
         return map[str];
     }).reduceRight(function(sum, num, i, self) {
