@@ -3,7 +3,6 @@
  * @return {string}
  */
 var convertToTitle = function(n) {
-
     var _1 = 'A'.charCodeAt();
     var title = '';
     while (n) {
