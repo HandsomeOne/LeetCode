@@ -3,16 +3,10 @@
  * @return {number}
  */
 var maxSubArray = function(nums) {
-    var max = -Infinity, currentMax = 0;
-    for (var i = 0, l = nums.length; i < l; i++) {
-        if (currentMax > 0) {
-            currentMax += nums[i];
-        } else {
-            currentMax = nums[i];
-        }
-        if (currentMax > max) {
-            max = currentMax;
-        }
+    var max = nums[0], currentMax = nums[0];
+    for (var i = 1, n = nums.length; i < n; i++) {
+        currentMax = Math.max(nums[i], currentMax + nums[i]);
+        max = Math.max(max, currentMax);
     }
     return max;
 };

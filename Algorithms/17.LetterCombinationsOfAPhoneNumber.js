@@ -8,8 +8,8 @@ var letterCombinations = function(digits) {
     }
     function crossJoin(a, b) {
         var product = [];
-        for (var i = 0, la = a.length; i < la; i++) {
-            for (var j = 0, lb = b.length; j < lb; j++) {
+        for (var i in a) {
+            for (var j in b) {
                 product.push(a[i] + b[j]);
             }
         }
