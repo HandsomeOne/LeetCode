@@ -13,21 +13,17 @@ var exist = function(board, word) {
         }
         var c = stack[stack.length - 1];
         var i = c.i, j = c.j;
-        if (i - 1 >= 0 && check(i - 1, j, stack)) {
-            stack.push({ i: i - 1, j });
-            if (search(stack)) { return true; }
-        }
-        if (check(i, j + 1, stack)) {
-            stack.push({ i, j: j + 1 });
-            if (search(stack)) { return true; }
-        }
-        if (i + 1 < board.length && check(i + 1, j, stack)) {
-            stack.push({ i: i + 1, j });
-            if (search(stack)) { return true; }
-        }
-        if (check(i, j - 1, stack)) {
-            stack.push({ i, j: j - 1 });
-            if (search(stack)) { return true; }
+        var neighbors = [];
+        if (i > 0) { neighbors.push({ i: i - 1, j }); }
+        if (j + 1 < board[0].length) { neighbors.push({ i, j: j + 1 }); }
+        if (i + 1 < board.length) { neighbors.push({ i: i + 1, j }); }
+        if (j > 0) { neighbors.push({ i, j: j - 1 }); }
+        for (var k in neighbors) {
+            var n = neighbors[k];
+            if (check(n.i, n.j, stack)) {
+                stack.push(n);
+                if (search(stack)) { return true; }
+            }
         }
         stack.pop();
         return false;
