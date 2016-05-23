@@ -5,8 +5,9 @@
 var gameOfLife = function(board) {
     var r = board.length;
     var l = board[0].length;
-    for (var i = 0; i < r; i++) {
-        for (var j = 0; j < l; j++) {
+    var i, j;
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < l; j++) {
             var liveNeighbors = 0;
             if (board[i - 1]) {
                 liveNeighbors +=
@@ -30,8 +31,8 @@ var gameOfLife = function(board) {
             }
         }
     }
-    for (var i = 0; i < r; i++) {
-        for (var j = 0; j < l; j++) {
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < l; j++) {
             if (board[i][j] === -1) {
                 board[i][j] = 1;
             } else if (board[i][j] === 2) {

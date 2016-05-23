@@ -8,7 +8,7 @@ var coinChange = function(coins, amount) {
     for (var i = 1; i <= amount; i++) {
         a[i] = Infinity;
     }
-    coins.forEach(function(coin) {
+    coins.forEach(coin => {
         for (var k = 1; k <= amount; k++) {
             a[k] = Math.min(a[k], 1 + (k >= coin ? a[k - coin] : Infinity));
         }

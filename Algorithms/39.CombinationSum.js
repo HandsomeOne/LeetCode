@@ -4,9 +4,7 @@
  * @return {number[][]}
  */
 var combinationSum = function(candidates, target) {
-    candidates.sort(function(a, b) {
-        return a - b;
-    });
+    candidates.sort((a, b) => a - b);
     var result = [];
     function combineTheRest(combined, sum, rest) {
         if (sum === target) {

@@ -5,12 +5,10 @@
  */
 var topKFrequent = function(nums, k) {
     var map = {};
-    nums.forEach(function(num) {
+    nums.forEach(num => {
         map[num] = num in map ? map[num] + 1 : 1;
     });
     var result = Object.keys(map).map(v => +v);
-    result.sort(function(a, b) {
-        return map[b] - map[a];
-    });
+    result.sort((a, b) => map[b] - map[a]);
     return result.slice(0, k);
 };

@@ -15,13 +15,11 @@ var levelOrderBottom = function(root) {
     }
     var a = [root], result = [];
     while (a.length) {
-        result.unshift(a.map(function(node) {
-            return node.val;
-        }));
+        result.unshift(a.map(node =>  node.val));
         var _a = [];
         for (var i = 0, l = a.length; i < l; i++) {
-            a[i].left && _a.push(a[i].left);
-            a[i].right && _a.push(a[i].right);
+            if (a[i].left) { _a.push(a[i].left); }
+            if (a[i].right) { _a.push(a[i].right); }
         }
         a = _a;
     }

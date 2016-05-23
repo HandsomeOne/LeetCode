@@ -19,7 +19,7 @@ var isSymmetric = function(root) {
                     return false;
                 }
             }
-            a[i] && _a.push(a[i].left, a[i].right);
+            if (a[i]) { _a.push(a[i].left, a[i].right); }
         }
         a = _a;
     }

@@ -21,8 +21,8 @@ var minDepth = function(root) {
             if (!a[i].left && !a[i].right) {
                 return depth;
             }
-            a[i].left && _a.push(a[i].left)
-            a[i].right && _a.push(a[i].right);
+            if (a[i].left) { _a.push(a[i].left); }
+            if (a[i].right) { _a.push(a[i].right); }
         }
         a = _a;
         depth += 1;

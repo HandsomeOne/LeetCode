@@ -14,7 +14,7 @@ var oddEvenList = function(head) {
         return head;
     }
     var insertPosition = head, even = head.next;
-    while (even && even.next){
+    while (even && even.next) {
         var odd = even.next;
         even.next = odd.next;
         odd.next = insertPosition.next;

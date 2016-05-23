@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-var rob = function (nums) {
+var rob = function(nums) {
     var robbedPrev = 0;
     var didNotRobPrev = 0;
     for (var i = 0, l = nums.length; i < l; i++) {

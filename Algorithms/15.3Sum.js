@@ -5,14 +5,10 @@
 var threeSum = function(nums) {
     var triplets = [];
     var count = {};
-    nums.forEach(function(num) {
+    nums.forEach(num => {
         count[num] = (count[num] || 0) + 1;
     });
-    nums = Object.keys(count).map(function(str) {
-        return +str;
-    }).sort(function(a, b) {
-        return a - b;
-    });
+    nums = Object.keys(count).map(str => +str).sort((a, b) => a - b);
     var l = nums.length;
     for (var i = 0; nums[i] <= 0; i++) {
         for (var j = i + (count[nums[i]] < 2); nums[j] <= -nums[i] / 2; j++) {

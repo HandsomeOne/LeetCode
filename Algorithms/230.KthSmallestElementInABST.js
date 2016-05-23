@@ -10,7 +10,7 @@
  * @param {number} k
  * @return {number}
  */
-var kthSmallest = function (root, k) {
+var kthSmallest = function(root, k) {
     var list = [];
     var nodes = [];
     while (root) {

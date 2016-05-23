@@ -17,8 +17,8 @@ var preorderTraversal = function(root) {
     for (var i = 0; i < result.length; i++) {
         var node = result[i];
         var children = [];
-        node.left && children.push(node.left);
-        node.right && children.push(node.right);
+        if (node.left) { children.push(node.left); }
+        if (node.right) { children.push(node.right); }
         [].splice.apply(result, [i, 1, node.val, ...children]);
     }
     return result;

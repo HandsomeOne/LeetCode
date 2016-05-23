@@ -4,7 +4,5 @@
  */
 var containsDuplicate = function(nums) {
     nums.sort();
-    return nums.some(function(num, i) {
-        return num === nums[i + 1];
-    })
+    return nums.some((num, i) => num === nums[i + 1]);
 };

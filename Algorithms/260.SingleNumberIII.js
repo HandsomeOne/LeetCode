@@ -4,19 +4,18 @@
  */
 var singleNumber = function(nums) {
     var xor = 0;
-    var l = nums.length;
-    for (var i = 0; i < l; i++) {
-        xor ^= nums[i];
-    }
+    nums.forEach(num => {
+        xor ^= num;
+    });
     var lowBit = xor & (-xor);
     var a = 0, b = 0;
-    for (var i = 0; i < l; i++) {
-        if (lowBit & nums[i]) {
-            a ^= nums[i];
+    nums.forEach(num => {
+        if (lowBit & num) {
+            a ^= num;
         }
         else {
-            b ^= nums[i];
+            b ^= num;
         }
-    }
+    });
     return [a, b];
 };

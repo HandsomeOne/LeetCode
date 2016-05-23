@@ -4,14 +4,14 @@
  */
 var groupAnagrams = function(strs) {
     var map = {};
-    for (var i in strs) {
-        var sorted = strs[i].split('').sort().join('');
+    for (var s of strs) {
+        var sorted = s.split('').sort().join('');
         map[sorted] = map[sorted] || [];
-        map[sorted].push(strs[i]);
+        map[sorted].push(s);
     }
     var result = [];
-    for (var j in map) {
-        result.push(map[j].sort());
+    for (var list of map) {
+        result.push(list.sort());
     }
     return result;
 };

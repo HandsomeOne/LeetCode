@@ -19,8 +19,9 @@ var countPrimes = function(n) {
     }
     var primes = [2, 3];
     for (var i = 5; i < n; i += 2) {
-        if (isPrime(i))
+        if (isPrime(i)) {
             primes.push(i);
+        }
     }
     return primes.length;
 };

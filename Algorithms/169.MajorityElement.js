@@ -4,7 +4,7 @@
  */
 var majorityElement = function(nums) {
     var candidate, count = 0;
-    nums.forEach(function(num, i) {
+    nums.forEach((num, i) => {
         if (count === 0) {
             candidate = num;
             count += 1;

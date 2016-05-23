@@ -3,7 +3,7 @@
  * @return {number}
  */
 var maxProduct = function(words) {
-    var nums = words.map(function(word) {
+    var nums = words.map(word => {
         var num = 0;
         for (var i = 0; i < 26; i++) {
             num <<= 1;

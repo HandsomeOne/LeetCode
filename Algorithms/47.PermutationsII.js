@@ -16,9 +16,9 @@ var permuteUnique = function(nums) {
                 for (var j = i + 1; j < l - (j - i); j++) {
                     swap(j, l - (j - i));
                 }
-                for (var j = i + 1; j < l; j++) {
-                    if (nums[j] > nums[i]) {
-                        swap(i, j);
+                for (var k = i + 1; k < l; k++) {
+                    if (nums[k] > nums[i]) {
+                        swap(i, k);
                         return;
                     }
                 }

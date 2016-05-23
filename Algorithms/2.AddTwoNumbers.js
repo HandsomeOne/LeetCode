@@ -19,8 +19,8 @@ var addTwoNumbers = function(l1, l2) {
     var l = new ListNode(carrying(l1.val + l2.val));
     var p = l;
     while ((l1 && l1.next) || (l2 && l2.next) || carry) {
-        l1 && (l1 = l1.next);
-        l2 && (l2 = l2.next);
+        l1 = l1 && l1.next;
+        l2 = l2 && l2.next;
         var digit = carrying((l1 ? l1.val : 0) + (l2 ? l2.val : 0) + carry);
         p.next = new ListNode(digit);
         p = p.next;

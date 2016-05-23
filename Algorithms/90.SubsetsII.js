@@ -4,12 +4,10 @@
  */
 var subsetsWithDup = function(nums) {
     var map = {};
-    nums.forEach(function(num) {
+    nums.forEach(num => {
         map[num] = num in map ? map[num] + 1 : 1;
     });
-    var keys = Object.keys(map).map(parseFloat).sort(function(a, b) {
-        return a - b;
-    });
+    var keys = Object.keys(map).map(parseFloat).sort((a, b) => a - b);
     var subsets = [];
     function selectTheRest(selected, rest) {
         if (rest.length === 0) {

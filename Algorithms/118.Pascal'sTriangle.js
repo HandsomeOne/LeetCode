@@ -9,11 +9,12 @@ var generate = function(numRows) {
     var triangle = [[1]];
     var row = [1];
     for (var i = 1; i < numRows; i++) {
-        row = row.map(function(num, i) {
-            return num + (row[i - 1] || 0);
-        });
+        row = row.map(add);
         row.push(1);
         triangle.push(row);
     }
     return triangle;
+    function add(num, i) {
+        return num + (row[i - 1] || 0);
+    }
 };

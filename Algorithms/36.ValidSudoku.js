@@ -23,8 +23,8 @@ var isValidSudoku = function(board) {
         for (var j = 0; j < 9; j++) {
             verticle += board[j][i];
         }
-        for (var j = 0; j < 3; j++) {
-            block += board[i - i % 3 + j].slice(i % 3 * 3, i % 3 * 3 + 3).join('');
+        for (var k = 0; k < 3; k++) {
+            block += board[i - i % 3 + k].slice(i % 3 * 3, i % 3 * 3 + 3).join('');
         }
         if (hasDuplicate(board[i]) || hasDuplicate(verticle) || hasDuplicate(block)) {
             return false;

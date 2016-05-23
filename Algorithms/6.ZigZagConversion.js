@@ -10,16 +10,17 @@ var convert = function(s, numRows) {
     var converted = '';
     var l = s.length;
     for (var i = 0; i < numRows; i++) {
+        var j;
         if (i === 0) {
-            for (var j = 0; 2 * j * (numRows - 1) < l; j++) {
+            for (j = 0; 2 * j * (numRows - 1) < l; j++) {
                 converted += s[2 * j * (numRows - 1)];
             }
         } else if (i === numRows - 1) {
-            for (var j = 0; (2 * j + 1) * (numRows - 1) < l; j++) {
+            for (j = 0; (2 * j + 1) * (numRows - 1) < l; j++) {
                 converted += s[(2 * j + 1) * (numRows - 1)];
             }
         } else {
-            for (var j = 0; 2 * j * (numRows - 1) < l; j++) {
+            for (j = 0; 2 * j * (numRows - 1) < l; j++) {
                 converted += s[2 * j * (numRows - 1) + i] || '';
                 converted += s[2 * (j + 1) * (numRows - 1) - i] || '';
             }

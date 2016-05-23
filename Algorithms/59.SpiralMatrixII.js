@@ -4,8 +4,8 @@
  */
 var generateMatrix = function(n) {
     var matrix = [];
-    for (var i = 0; i < n; i++) {
-        matrix[i] = [];
+    for (var k = 0; k < n; k++) {
+        matrix[k] = [];
     }
     for (var offset = 0; offset < n >> 1; offset++) {
         var start = 4 * offset * (n - offset) + 1;

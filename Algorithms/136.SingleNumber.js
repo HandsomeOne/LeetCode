@@ -3,7 +3,5 @@
  * @return {number}
  */
 var singleNumber = function(nums) {
-    return nums.reduce(function(a, b) {
-        return a ^ b;
-    });
+    return nums.reduce((a, b) => a ^ b);
 };

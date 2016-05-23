@@ -18,8 +18,8 @@ var postorderTraversal = function(root) {
         var j = result.length - 1 - i;
         var node = result[j];
         var children = [];
-        node.left && children.push(node.left);
-        node.right && children.push(node.right);
+        if (node.left) { children.push(node.left); }
+        if (node.right) { children.push(node.right); }
         [].splice.apply(result, [j, 1, ...children, node.val]);
     }
     return result;

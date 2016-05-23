@@ -12,8 +12,12 @@ var simplifyPath = function(path) {
                 s.splice(p, 1);
                 break;
             case '..':
-                p ? s.splice(p - 1, 2) : s.splice(p, 1);
-                p && p--;
+                if (p) {
+                    s.splice(p - 1, 2);
+                    p--;
+                } else {
+                    s.splice(p, 1);
+                }
                 break;
             default:
                 p++;

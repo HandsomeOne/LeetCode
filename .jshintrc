@@ -3,5 +3,6 @@
     "unused": false,
     "curly": true,
     "eqeqeq": true,
-    "undef": true
+    "forin": true,
+    "undef": false
 }

@@ -3,9 +3,7 @@
  * @return {number[][]}
  */
 var subsets = function(nums) {
-    nums.sort(function(a, b) {
-        return a - b;
-    });
+    nums.sort((a, b) => a - b);
     var result = [];
     var l = nums.length, n = 1 << l;
     while (n > 0) {

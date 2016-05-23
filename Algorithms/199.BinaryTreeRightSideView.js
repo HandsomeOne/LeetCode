@@ -18,8 +18,8 @@ var rightSideView = function(root) {
         result.push(a[a.length - 1].val);
         var _a = [];
         for (var i = 0, l = a.length; i < l; i++) {
-            a[i].left && _a.push(a[i].left);
-            a[i].right && _a.push(a[i].right);
+            if (a[i].left) { _a.push(a[i].left); }
+            if (a[i].right) { _a.push(a[i].right); }
         }
         a = _a;
     }

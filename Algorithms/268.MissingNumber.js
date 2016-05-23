@@ -4,7 +4,7 @@
  */
 var missingNumber = function(nums) {
     var missing = nums.length * (nums.length + 1) / 2;
-    nums.forEach(function(num) {
+    nums.forEach(num => {
         missing -= num;
     });
     return missing;

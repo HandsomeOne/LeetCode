@@ -11,19 +11,20 @@
  */
 var invertTree = function(root) {
     function swap(node) {
-        var t=node.left;
-        node.left=node.right;
-        node.right=t;
+        var t = node.left;
+        node.left = node.right;
+        node.right = t;
+    }
+    function push(node) {
+        if (node) {
+            swap(node);
+            _a.push(node.left, node.right);
+        }
     }
     var a = [root];
     while (a.length) {
         var _a = [];
-        a.forEach(function(node) {
-            if (node) {
-                swap(node);
-                _a.push(node.left, node.right);
-            }
-        });
+        a.forEach(push);
         a = _a;
     }
     return root;

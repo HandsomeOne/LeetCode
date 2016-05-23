@@ -30,7 +30,5 @@ var intToRoman = function(num) {
         num = num / 10 | 0;
         base *= 10;
     }
-    return a.map(function(n) {
-        return map[n];
-    }).join('');
+    return a.map(n => map[n]).join('');
 };
