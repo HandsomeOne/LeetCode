@@ -16,10 +16,10 @@ var binaryTreePaths = function(root) {
         for (var i = 0, l = a.length; i < l; i++) {
             if (a[i]) {
                 var path;
-                if (paths[i / 2 | 0] === '') {
+                if (paths[i >> 1] === '') {
                     path = '' + a[i].val;
                 } else {
-                    path = paths[i / 2 | 0] + '->' + a[i].val;
+                    path = paths[i >> 1] + '->' + a[i].val;
                 }
                 if (a[i].left === null && a[i].right === null) {
                     result.push(path);

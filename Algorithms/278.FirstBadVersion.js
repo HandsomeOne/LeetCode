@@ -20,7 +20,7 @@ var solution = function(isBadVersion) {
     return function(n) {
         var lastGood = 0, firstBad = n;
         while (firstBad - lastGood > 1) {
-            var x = (firstBad + lastGood) / 2 | 0;
+            var x = (firstBad + lastGood) >> 1;
             if (isBadVersion(x)) {
                 firstBad = x;
             } else {

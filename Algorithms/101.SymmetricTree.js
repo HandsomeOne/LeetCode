@@ -14,7 +14,7 @@ var isSymmetric = function(root) {
     while (a.length) {
         var _a = [];
         for (var i = 0, l = a.length; i < l; i++) {
-            if (i < (l / 2 | 0) && (a[i] || a[l - i - 1])) {
+            if (i < (l >> 1) && (a[i] || a[l - i - 1])) {
                 if ((a[i] && a[i].val) !== (a[l - i - 1] && a[l - i - 1].val)) {
                     return false;
                 }

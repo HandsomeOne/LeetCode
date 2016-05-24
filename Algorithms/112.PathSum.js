@@ -16,7 +16,7 @@ var hasPathSum = function(root, sum) {
         var _a = [], _s = [];
         for (var i = 0, l = a.length; i < l; i++) {
             if (a[i]) {
-                var _sum = a[i].val + s[i / 2 | 0];
+                var _sum = a[i].val + s[i >> 1];
                 if (_sum === sum && a[i].left === null && a[i].right === null) {
                     return true;
                 }

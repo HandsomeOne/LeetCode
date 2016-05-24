@@ -17,9 +17,9 @@ var pathSum = function(root, sum) {
         var _a = [], _paths = [];
         for (var i = 0, l = a.length; i < l; i++) {
             if (a[i]) {
-                var path = paths[i / 2 | 0].slice();
+                var path = paths[i >> 1].slice();
                 path.push(a[i].val);
-                path.sum = a[i].val + paths[i / 2 | 0].sum;
+                path.sum = a[i].val + paths[i >> 1].sum;
                 if (path.sum === sum && a[i].left === null && a[i].right === null) {
                     result.push(path);
                 }

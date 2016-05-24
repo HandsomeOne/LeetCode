@@ -18,7 +18,7 @@ var searchInsert = function(nums, target) {
         if (nums[end] === target) {
             return end;
         }
-        var middle = (start + end) / 2 | 0;
+        var middle = (start + end) >> 1;
         if (nums[middle] === target) {
             return middle;
         }

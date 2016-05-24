@@ -5,7 +5,7 @@
 var mySqrt = function(x) {
     var sqrt = x;
     while (sqrt * sqrt > x) {
-        sqrt = (sqrt + x / sqrt) / 2 | 0;
+        sqrt = (sqrt + x / sqrt) >> 1;
     }
     return sqrt;
 };
