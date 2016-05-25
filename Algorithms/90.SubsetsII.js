@@ -9,15 +9,15 @@ var subsetsWithDup = function(nums) {
     });
     var keys = Object.keys(map).map(parseFloat).sort((a, b) => a - b);
     var subsets = [];
-    function selectTheRest(selected, rest) {
-        if (rest.length === 0) {
+    function selectTheRest(selected, index) {
+        if (index === keys.length) {
             subsets.push(selected);
             return;
         }
-        for (var j = 0; j <= map[rest[0]]; j++) {
-            selectTheRest(selected.concat(new Array(j).fill(+rest[0])), rest.slice(1));
+        for (var j = 0; j <= map[keys[index]]; j++) {
+            selectTheRest(selected.concat(new Array(j).fill(keys[index])), index + 1);
         }
     }
-    selectTheRest([], keys);
+    selectTheRest([], 0);
     return subsets;
 };

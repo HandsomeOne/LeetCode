@@ -9,20 +9,18 @@ var combine = function(n, k) {
         nums.push(i);
     }
     var combinations = [];
-    function combineTheRest(combined, nums) {
+    function combineTheRest(combined, index) {
         if (combined.length === k) {
             combinations.push(combined);
             return;
         }
-        if (!nums.length) {
+        if (index > n) {
             return;
         }
-        for (var i = 0, l = nums.length; i < l; i++) {
-            var newNums = nums.slice();
-            newNums.splice(0, i + 1);
-            combineTheRest(combined.concat([nums[i]]), newNums);
+        for (var i = 0; i < n - index; i++) {
+            combineTheRest(combined.concat(nums[index + i]), index + i + 1);
         }
     }
-    combineTheRest([], nums);
+    combineTheRest([], 0);
     return combinations;
 };

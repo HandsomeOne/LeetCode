@@ -6,21 +6,22 @@
 var combinationSum = function(candidates, target) {
     candidates.sort((a, b) => a - b);
     var result = [];
-    function combineTheRest(combined, sum, rest) {
+    function combineTheRest(combined, sum, index) {
         if (sum === target) {
             result.push(combined);
             return;
         }
-        if (rest.length === 0) {
+        if (sum > target || index === candidates.length) {
             return;
         }
-        for (var i = 0; sum + i * rest[0] <= target; i++) {
+        var num = candidates[index];
+        for (var i = 0; sum + i * num <= target; i++) {
             combineTheRest(
-                combined.concat(new Array(i).fill(rest[0])),
-                sum + i * rest[0],
-                rest.slice(1));
+                combined.concat(new Array(i).fill(num)),
+                sum + i * num,
+                index + 1);
         }
     }
-    combineTheRest([], 0, candidates);
+    combineTheRest([], 0, 0);
     return result;
 };
