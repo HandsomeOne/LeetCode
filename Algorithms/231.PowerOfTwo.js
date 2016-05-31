@@ -3,8 +3,5 @@
  * @return {boolean}
  */
 var isPowerOfTwo = function(n) {
-    if (n < 1) {
-        return false;
-    }
-    return /^10*$/.test(n.toString(2));
+    return n > 0 && /^10*$/.test(n.toString(2));
 };
