@@ -9,16 +9,21 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
-var isBalanced = function(root) {
-    function _isBalanced(root) {
+var isBalanced = function (root) {
+    function height(root) {
         if (!root) {
-            return 1;
+            return 0;
         }
-        var left = _isBalanced(root.left), right = _isBalanced(root.right);
-        if (!left || !right) {
-            return false;
+        var left = height(root.left), right = height(root.right);
+        if (Math.abs(left - right) > 1) {
+            throw new Error();
         }
-        return Math.abs(left - right) <= 1 ? Math.max(left, right) + 1 : false;
+        return Math.max(left, right) + 1;
     }
-    return !!_isBalanced(root);
+    try {
+        height(root);
+        return true;
+    } catch (err) {
+        return false;
+    }
 };
