@@ -8,8 +8,7 @@ var calculate = function(s) {
     var stack = [+s[0]];
     var a, b;
     for (var i = 1, l = s.length; i < l; i += 2) {
-        var x = s[i];
-        switch (x) {
+        switch (s[i]) {
             case '+':
             case '-':
                 if (stack.length > 1) {
@@ -18,13 +17,13 @@ var calculate = function(s) {
                     a = stack.pop();
                     stack.push(p === '+' ? a + b : a - b);
                 }
-                stack.push(x, +s[i + 1]);
+                stack.push(s[i], +s[i + 1]);
                 break;
             case '*':
             case '/':
                 a = stack.pop();
                 b = +s[i + 1];
-                stack.push(x === '*' ? a * b : a / b | 0);
+                stack.push(s[i] === '*' ? a * b : a / b | 0);
         }
     }
     return stack[0];
