@@ -5,7 +5,7 @@
  */
 var getHint = function(secret, guess) {
     var bull = 0, cow = 0;
-    var secretPile = {}; guessPile = {};
+    var secretPile = {}, guessPile = {};
     for (var i = 0, l = secret.length; i < l; i++) {
         if (secret[i] === guess[i]) {
             bull += 1;

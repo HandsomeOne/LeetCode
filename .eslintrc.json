@@ -1,0 +1,19 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6
+    },
+    "env": {
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+        "curly": "warn",
+        "eqeqeq": "warn",
+        "no-unused-vars": "off",
+        "no-constant-condition": "off"
+    },
+    "globals": {
+        "ListNode": false,
+        "TreeNode": false
+    }
+}
